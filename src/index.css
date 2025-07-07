@@ -1,0 +1,418 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 마크다운 스타일 추가 */
+.prose pre {
+  @apply bg-slate-800 text-slate-100 p-4 rounded-md overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent text-inherit p-0 border-0 shadow-none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.prose code {
+  @apply text-sm;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-slate-300 pl-4 italic text-slate-600;
+}
+
+.prose table {
+  @apply border-collapse border border-slate-300;
+}
+
+.prose th, .prose td {
+  @apply border border-slate-300 p-2;
+}
+
+.prose th {
+  @apply bg-slate-100;
+}
+
+.prose img {
+  @apply max-w-full rounded-md shadow-sm my-4;
+}
+
+.prose hr {
+  @apply my-6 border-t border-slate-200;
+}
+
+/* 마크다운 체크박스 스타일 */
+.prose input[type="checkbox"] {
+  @apply mr-2 rounded border-slate-300 text-blue-600 focus:ring-blue-500;
+}
+
+/* 마크다운 링크 스타일 */
+.prose a {
+  @apply text-blue-600 no-underline hover:underline;
+}
+
+/* 마크다운 목록 스타일 */
+.prose ul {
+  @apply list-disc pl-5 my-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-5 my-4;
+}
+
+/* 마크다운 제목 스타일 */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply font-bold text-slate-900 mt-6 mb-4;
+}
+
+.prose h1 {
+  @apply text-3xl;
+}
+
+.prose h2 {
+  @apply text-2xl;
+}
+
+.prose h3 {
+  @apply text-xl;
+}
+
+.prose h4 {
+  @apply text-lg;
+}
+
+.prose h5, .prose h6 {
+  @apply text-base;
+}
+
+@layer base {
+  html {
+    font-family: 'Segoe UI', 'Segoe UI Variable', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: var(--win11-light-color);
+    color: var(--win11-dark-color);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  :root {
+    --win11-blue-color: #0078d4;
+    --win11-light-blue-color: #50e6ff;
+    --win11-gray-color: #f3f3f3;
+    --win11-dark-color: #202020;
+    --win11-light-color: #ffffff;
+    --win11-border-color: #e6e6e6;
+    --win11-window-color: rgba(255, 255, 255, 0.7);
+    --win11-sidebar-color: #fafafa;
+    --win11-accent-color: #0078d4;
+    --win11-taskbar-color: rgba(243, 243, 243, 0.85);
+    --win11-start-color: rgba(243, 243, 243, 0.9);
+    
+    /* Windows 11 Mica/Acrylic 효과 관련 변수 */
+    --win11-mica-opacity: 0.8;
+    --win11-acrylic-opacity: 0.7;
+    --win11-backdrop-blur: 30px;
+    
+    /* Windows 11 기본 테두리 반경 */
+    --win11-border-radius: 8px;
+    --win11-border-radius-lg: 12px;
+    --win11-border-radius-xl: 16px;
+    
+    /* Windows XP 색상 변수 */
+    --winxp-blue-color: #0A246A;
+    --winxp-blue-light-color: #3A6EA5;
+    --winxp-olive-color: #7ba05b;
+    --winxp-silver-color: #b9babc;
+    --winxp-window-color: #ECE9D8;
+    --winxp-taskbar-start-color: #2A8734;
+    --winxp-taskbar-from-color: #245edc;
+    --winxp-taskbar-to-color: #3a81f3;
+    --winxp-border-color: #0c5fcb;
+    --winxp-title-active-color: #0A246A;
+    --winxp-title-inactive-color: #7A96DF;
+    
+    /* Windows XP 테두리 반경 */
+    --winxp-border-radius: 3px;
+  }
+}
+
+@layer components {
+  .bg-win11-light {
+    background-color: var(--win11-light-color);
+  }
+  
+  .bg-win11-window {
+    background-color: var(--win11-window-color);
+  }
+  
+  .text-win11-dark {
+    color: var(--win11-dark-color);
+  }
+  
+  .bg-win11-blue {
+    background-color: var(--win11-blue-color);
+  }
+  
+  .text-win11-blue {
+    color: var(--win11-blue-color);
+  }
+  
+  .border-win11-border {
+    border-color: var(--win11-border-color);
+  }
+  
+  .bg-win11-gray {
+    background-color: var(--win11-gray-color);
+  }
+  
+  .bg-win11-sidebar {
+    background-color: var(--win11-sidebar-color);
+  }
+  
+  .bg-win11-taskbar {
+    background-color: var(--win11-taskbar-color);
+  }
+  
+  .bg-win11-start {
+    background-color: var(--win11-start-color);
+  }
+
+  /* Windows 11 스타일 창 */
+  .win11-window {
+    background-color: var(--win11-window-color);
+    backdrop-filter: blur(var(--win11-backdrop-blur));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: var(--win11-border-radius-lg);
+    border: 1px solid var(--win11-border-color);
+    overflow: hidden;
+  }
+  
+  /* Windows 11 스타일 버튼 */
+  .win11-button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: var(--win11-border-radius);
+    background-color: var(--win11-blue-color);
+    color: white;
+    font-weight: 500;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .win11-button:hover {
+    background-color: #0067b8;
+  }
+  
+  /* Windows 11 스타일 입력 필드 */
+  .win11-input {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: var(--win11-border-radius);
+    border: 1px solid var(--win11-border-color);
+  }
+  
+  .win11-input:focus {
+    outline: none;
+    border-color: var(--win11-blue-color);
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+  }
+  
+  /* Windows 11 Mica 효과 */
+  .win11-mica {
+    background-color: rgba(255, 255, 255, var(--win11-mica-opacity));
+    backdrop-filter: blur(var(--win11-backdrop-blur));
+  }
+  
+  /* Windows 11 Acrylic 효과 */
+  .win11-acrylic {
+    background-color: rgba(255, 255, 255, var(--win11-acrylic-opacity));
+    backdrop-filter: blur(var(--win11-backdrop-blur));
+  }
+  
+  /* Windows 11 카드 컴포넌트 */
+  .win11-card {
+    background-color: var(--win11-light-color);
+    border-radius: var(--win11-border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 1rem;
+  }
+  
+  /* Windows XP 스타일 창 */
+  .winxp-window {
+    background-color: var(--winxp-window-color);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    border-radius: var(--winxp-border-radius);
+    border: 1px solid #a0a0a0;
+    overflow: hidden;
+  }
+  
+  /* Windows XP 스타일 창 제목 표시줄 */
+  .winxp-title-active {
+    background: linear-gradient(to bottom, #0A246A, #3A6EA5);
+    color: white;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .winxp-title-inactive {
+    background: linear-gradient(to bottom, #7A96DF, #C2CEEF);
+    color: white;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Windows XP 스타일 버튼 */
+  .winxp-button {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--winxp-border-radius);
+    background: linear-gradient(to bottom, #f6f6f6, #dcdbde);
+    color: black;
+    font-family: 'Tahoma', 'Franklin Gothic', 'Trebuchet MS', sans-serif;
+    font-size: 0.9rem;
+    border: 1px solid #a0a0a0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease-out;
+  }
+  
+  .winxp-button:hover {
+    background: linear-gradient(to bottom, #f8f8f8, #eeeeee);
+  }
+  
+  .winxp-button:active {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transform: translateY(1px);
+    background: linear-gradient(to bottom, #e0e0e0, #f0f0f0);
+  }
+  
+  /* Windows XP 스타일 입력 필드 */
+  .winxp-input {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0;
+    border: 1px solid #7b9ebd;
+    background-color: white;
+    font-family: 'Tahoma', 'Franklin Gothic', 'Trebuchet MS', sans-serif;
+  }
+  
+  .winxp-input:focus {
+    outline: none;
+    border-color: #3a6ea5;
+    box-shadow: 0 0 0 1px rgba(58, 110, 165, 0.3);
+  }
+  
+  /* Windows XP 스타일 스크롤바 */
+  .winxp-scrollbar::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  .winxp-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border: 1px solid #c1c1c1;
+  }
+  
+  .winxp-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #dadada, #f6f6f6);
+    border: 1px solid #a1a1a1;
+  }
+  
+  .winxp-scrollbar::-webkit-scrollbar-button {
+    background: #f1f1f1;
+    border: 1px solid #a1a1a1;
+    height: 16px;
+  }
+  
+  /* Windows XP 스타일 그라데이션 배경 */
+  .bg-winxp-gradient {
+    background: linear-gradient(to bottom, var(--winxp-taskbar-from-color), var(--winxp-taskbar-to-color));
+  }
+  
+  .bg-winxp-button-gradient {
+    background: linear-gradient(to bottom, #f6f6f6, #dcdbde);
+  }
+  
+  /* Windows XP 스타일 창 애니메이션 */
+  @keyframes winxp-window-open {
+    from { 
+      opacity: 0; 
+      transform: scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+  
+  @keyframes winxp-window-close {
+    from { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+    to { 
+      opacity: 0; 
+      transform: scale(0.95); 
+    }
+  }
+  
+  .winxp-window-animation-open {
+    animation: winxp-window-open 0.2s ease-out;
+  }
+  
+  .winxp-window-animation-close {
+    animation: winxp-window-close 0.15s ease-in forwards;
+  }
+  
+  /* Windows XP 스타일 시작 메뉴 애니메이션 */
+  @keyframes winxp-start-menu-open {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .winxp-start-menu-animation {
+    animation: winxp-start-menu-open 0.2s ease-out;
+  }
+  
+  /* Windows XP 스타일 툴팁 */
+  .winxp-tooltip {
+    background-color: #FFFFE1;
+    border: 1px solid #000000;
+    padding: 2px 5px;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 0.8rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Windows XP 스타일 체크박스 */
+  .winxp-checkbox {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #7b9ebd;
+    background-color: white;
+    position: relative;
+  }
+  
+  .winxp-checkbox:checked {
+    background-color: #3a6ea5;
+  }
+  
+  .winxp-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 10px;
+    top: -2px;
+    left: 1px;
+  }
+} 
