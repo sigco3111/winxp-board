@@ -17,7 +17,7 @@ import SettingsModal from './SettingsModal';
 const WALLPAPER_KEY = 'winxp_board_wallpaper';
 const WALLPAPER_TYPE_KEY = 'winxp_board_wallpaper_type';
 // 기본 배경화면 경로
-const DEFAULT_WALLPAPER = '/assets/wallpapers/winxp_bliss.jpg';
+const DEFAULT_WALLPAPER = '/assets/wallpapers/default.jpg';
 // 대체 배경색
 const FALLBACK_BG_COLOR = '#3A6EA5'; // Windows XP 기본 파란색
 
