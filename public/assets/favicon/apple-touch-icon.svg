@@ -1,9 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
-  <rect width="180" height="180" fill="#0078D4" rx="40" ry="40" />
+  <rect width="180" height="180" fill="#F0F0F0" rx="40" ry="40" />
   <g transform="translate(45, 45)">
-    <rect x="0" y="0" width="35" height="35" fill="white" />
-    <rect x="55" y="0" width="35" height="35" fill="white" />
-    <rect x="0" y="55" width="35" height="35" fill="white" />
-    <rect x="55" y="55" width="35" height="35" fill="white" />
+    <!-- Windows XP 스타일 로고 -->
+    <rect x="0" y="0" width="35" height="35" fill="#F25022" rx="5" ry="5" /> <!-- 빨간색 -->
+    <rect x="55" y="0" width="35" height="35" fill="#7FBA00" rx="5" ry="5" /> <!-- 초록색 -->
+    <rect x="0" y="55" width="35" height="35" fill="#00A4EF" rx="5" ry="5" /> <!-- 파란색 -->
+    <rect x="55" y="55" width="35" height="35" fill="#FFB900" rx="5" ry="5" /> <!-- 노란색 -->
   </g>
 </svg> 

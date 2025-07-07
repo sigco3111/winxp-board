@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <rect x="0" y="0" width="10" height="10" fill="#0078D4" />
-  <rect x="14" y="0" width="10" height="10" fill="#0078D4" />
-  <rect x="0" y="14" width="10" height="10" fill="#0078D4" />
-  <rect x="14" y="14" width="10" height="10" fill="#0078D4" />
+  <!-- Windows XP 스타일 로고 -->
+  <rect x="0" y="0" width="10" height="10" fill="#F25022" rx="1" ry="1" /> <!-- 빨간색 -->
+  <rect x="14" y="0" width="10" height="10" fill="#7FBA00" rx="1" ry="1" /> <!-- 초록색 -->
+  <rect x="0" y="14" width="10" height="10" fill="#00A4EF" rx="1" ry="1" /> <!-- 파란색 -->
+  <rect x="14" y="14" width="10" height="10" fill="#FFB900" rx="1" ry="1" /> <!-- 노란색 -->
 </svg> 
